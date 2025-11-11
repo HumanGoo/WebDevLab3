@@ -26,7 +26,7 @@ Welcome to our Streamlit Web Development Lab03 app! You can navigate between the
 1. **Library**: Look up your favorite Book!
 2. 
 3.
-4.
+4.**BookWorm**: Chat with an avid reading fan. 
 
 """)
 
