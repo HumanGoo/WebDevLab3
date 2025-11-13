@@ -4,6 +4,7 @@ from math import ceil
 
 st.title("Library")
 
+
 baseURL  = "https://openlibrary.org/search.json?q="
 imageURL = "https://covers.openlibrary.org/b/id/"
 
@@ -56,5 +57,10 @@ if Query:
             except:
                 authors = "Unknown"
             st.subheader(f'by {authors}')
-            st.write(f"First published in {result['first_publish_year']}")
+            try:
+                st.write(f"First published in {result['first_publish_year']}")
+            except:
+                st.write("Publish year unknown")
         st.divider()
+else:
+    st.image("Images/FindABook.jpg")
