@@ -3,14 +3,9 @@ import requests as r
 
 # compare ratings 
 
-st.title("Library")
+st.title("BookWorm")
 
 baseURL  = "https://openlibrary.org/search.json?q="
 
-
-Query = st.text_input("Search for any Book by title, author, and more!", placeholder= "I'm looking for...")
-
-if Query:
-    request = r.get(baseURL + Query)
-    data = request.json()
-    st.write(data)
+st.write("This is the page for which we are implementing our chatbot, BookWorm")
+#Query = st.text_input("Search for any Book by title, author, and more!", placeholder= "I'm looking for...")
