@@ -89,6 +89,8 @@ if st.button("Give Me a Book!"):
     indexStart = text.index(":")
     indexEnd = text.index("by")
     indexNewLine = text.index("\n")
+    st.write(indexStart,indexEnd,indexNewLine)
+
 
 try:
     def stream_data():
