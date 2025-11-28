@@ -20,13 +20,14 @@ st.checkbox("asfdklksd")
 
 content = st.text_input("What Kind of Book Are You Looking For?")
 
-model = genai.GenerativeModel('models/gemini-3-pro-preview') #this is the free model of google gemini
+model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
 
 if content:
     response = model.generate_content(content)
     text = response.text
 try:
     st.write_stream(text) #dont forget to print your response!
+
 except:
     pass
 
