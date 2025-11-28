@@ -61,6 +61,7 @@ if st.button("Give Me a Book!"):
     bList = []
     for i in range(0,11):
         bList.append(aDict["docs"][i]["title"])
+    st.write(bList)
     
     """
     response = model.generate_content(content)
