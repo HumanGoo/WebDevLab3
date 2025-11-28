@@ -31,9 +31,11 @@ genre/subject?
 vibes of book
 """
 author = ""
-
-key = st.secrets["key"]
-genai.configure(api_key=key)
+try:
+    key = st.secrets["key"]
+    genai.configure(api_key=key)
+except:
+    st.error("LLM Key Not Found")
 
 #length = st.slider("Desired Book Length",min_value=10, max_value=1000)
 if st.checkbox("Looking for a Specific Author"):
@@ -65,9 +67,9 @@ if st.button("Give Me a Book!"):
             bList.append(aDict["docs"][i]["title"])
     except:
         for i in aDict["docs"]:
-            st.write(i)
-            #bList.append(aDict["docs"][i]["title"])
-    st.write(bList)
+            #st.write(i["title"])
+            bList.append(i["title"])
+    #st.write(bList)
     
     """
     response = model.generate_content(content)
