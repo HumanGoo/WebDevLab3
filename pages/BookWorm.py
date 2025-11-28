@@ -38,7 +38,7 @@ if st.checkbox("Looking for a Specific Author"):
 content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Happy, Educational, Mars etc.", 
                         placeholder= "Tags")
 st.write("What Year do You Want Your Book to be Published In?")
-start, end = st.columns()
+start, end = st.columns(2)
 with start:
     timelineStart = st.number_input("")
 with end:
