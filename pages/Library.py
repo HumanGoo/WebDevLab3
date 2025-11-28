@@ -11,8 +11,12 @@ imageURL = "https://covers.openlibrary.org/b/id/"
 
 if 'query' not in st.session_state:
     st.session_state.query = ""
+if st.session_state.query:
+    st.session_state.query = st.session_state.query.replace("%20"," ")
 Query = st.text_input("Search for any Book by title, author, and more!", value= st.session_state.query, placeholder= "I'm looking for...")
-st.session_state.query = Query
+if Query:
+    Query = Query.replace(" ","%20")
+    st.session_state.query = Query
 if 'count' not in st.session_state:
     st.session_state.count = 1
 count = st.session_state.count

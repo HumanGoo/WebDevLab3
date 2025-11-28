@@ -8,24 +8,25 @@ st.title("BookWorm")
 
 baseURL  = "https://openlibrary.org/search.json?q="
 
-st.write("This is the page for which we are implementing our chatbot, BookWorm.")
+st.write("Welcome to BookWorm! Find the right book for you.")
 
 
-#key = st.secrets["key"]
-key = "AIzaSyBbnNqSuyibRfXsxQBLNwfTV2tJ-_GUg40"
-
-
+key = st.secrets["key"]
 genai.configure(api_key=key)
-content = st.text_input("hello")
 
-model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
+st.slider("Book Length",min_value=10, max_value=1000)
+st.checkbox("asfdklksd")
+
+
+content = st.text_input("What Kind of Book Are You Looking For?")
+
+model = genai.GenerativeModel('models/gemini-3-pro-preview') #this is the free model of google gemini
+
+if content:
+    response = model.generate_content(content)
+    text = response.text
 try:
-    response = model.generate_content(content) #enter your prompt here!
-    st.write(response.text) #dont forget to print your response!
+    st.write_stream(text) #dont forget to print your response!
 except:
     pass
 
-#Query = st.text_input("Search for any Book by title, author, and more!", placeholder= "I'm looking for...")
-
-
-#print(genai.GenerativeModel("gemini-1.5-flash"))
