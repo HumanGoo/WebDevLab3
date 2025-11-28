@@ -29,7 +29,7 @@ length of book
 genre/subject?
 vibes of book
 """
-
+author = ""
 
 key = st.secrets["key"]
 genai.configure(api_key=key)
