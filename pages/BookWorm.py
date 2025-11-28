@@ -35,7 +35,7 @@ author = ""
 key = st.secrets["key"]
 genai.configure(api_key=key)
 
-length = st.slider("Desired Book Length",min_value=10, max_value=1000)
+#length = st.slider("Desired Book Length",min_value=10, max_value=1000)
 if st.checkbox("Looking for a Specific Author"):
     author = st.text_input(label="",placeholder="Author")
 
