@@ -31,12 +31,11 @@ key = st.secrets["key"]
 genai.configure(api_key=key)
 
 length = st.slider("Desired Book Length",min_value=10, max_value=1000)
-subject = st.text_input("Subject/Genre")
 if st.checkbox("Looking for a Specific Author"):
     author = st.text_input("Author")
 
 
-content = st.text_input("What Kind of Book Are You Looking For?")
+content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Romance, etc.", placeholder= "Seperate subjects commas")
 
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
