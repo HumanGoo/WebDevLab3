@@ -5,6 +5,9 @@ import time
 from datetime import date
 currentDate = date.today()
 currentYear = currentDate.year
+aList = []
+for i in range(1200,currentYear+1,5):
+    aList.append(i)
 
 import os
 # compare ratings 
@@ -38,13 +41,11 @@ if st.checkbox("Looking for a Specific Author"):
 
 content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Happy, Educational, Mars etc.", 
                         placeholder= "Tags")
-st.write("What Year do You Want Your Book to be Published In?")
-start, end = st.columns(2)
-with start:
-    timelineStart = st.number_input("Starting Publishing Year", min_value=1200 , max_value= currentYear,step=10,value=1900)
-with end:
-    timelineEnd = st.number_input("Ending Publishing Year", min_value=1300, max_value = currentYear, step=10, value= currentYear)
-
+start_color, end_color = st.select_slider(
+    "Select a range of your desired book's publish year",
+    options=aList,
+    value=(1900, 2025),
+)
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
 if st.button("Give Me a Book!"):
