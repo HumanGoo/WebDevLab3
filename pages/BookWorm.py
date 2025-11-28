@@ -59,8 +59,13 @@ if st.button("Give Me a Book!"):
     aDict = data.json()
     st.write(baseURL+query+"&mode=everything&sort=readinglog")
     bList = []
-    for i in range(0,11):
-        bList.append(aDict["docs"][i]["title"])
+    try:
+        aDict["docs"][i]["title"]
+        for i in range(0,11):
+            bList.append(aDict["docs"][i]["title"])
+    except:
+        for i in aDict["docs"]:
+            bList.append([i]["title"])
     st.write(bList)
     
     """
