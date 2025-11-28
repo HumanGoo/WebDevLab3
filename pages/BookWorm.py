@@ -16,7 +16,6 @@ import os
 st.title("BookWorm")
 
 baseURL  = "https://openlibrary.org/search.json?q=subject%3A"
-imageURL = "https://covers.openlibrary.org/b/id/"
 
 st.write("Welcome to BookWorm! Find the right book for you.")
 
@@ -86,37 +85,13 @@ if st.button("Give Me a Book!"):
     
     response = model.generate_content(fullContent)
     text = response.text
-    indexStart = text.index(":")
-    indexEnd = text.index("by")
-    indexNewLine = text.index("\n")
-    st.write(indexStart,indexEnd,indexNewLine)
-
+    
 
 try:
     def stream_data():
-        for word in text.split(" ")[0,indexNewLine]:
+        for word in text.split(" "):
             yield word + " "
             time.sleep(0.02)
-        st.write(text[indexStart,indexEnd])
-        """
-        col1, col2 = st.columns([1,2])
-        with col1:
-            try:
-                st.image(f'{imageURL}{result["cover_i"]}-M.jpg')
-            except:
-                st.image("Images/Message_Not_Found.jpg")
-        with col2:  
-            st.header(result["title"])
-            try:
-                authors = ", ".join(result["author_name"])
-            except:
-                authors = "Unknown"
-            st.subheader(f'by {authors}')
-            try:
-                st.write(f"First published in {result['first_publish_year']}")
-            except:
-                st.write("Publish year unknown")
-        """
     st.write_stream(stream_data) #dont forget to print your response!
 except:
     pass
