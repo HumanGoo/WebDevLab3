@@ -36,7 +36,7 @@ genai.configure(api_key=key)
 
 length = st.slider("Desired Book Length",min_value=10, max_value=1000)
 if st.checkbox("Looking for a Specific Author"):
-    author = st.text_input(placeholder="Author")
+    author = st.text_input("",placeholder="Author")
 
 
 content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Happy, Educational, Mars etc.", 
