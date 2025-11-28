@@ -24,12 +24,12 @@ Find a book based on the filters passed through, and then have the LLM
 explain why it is the right book for the person
 """
 
-"""
-PLANNED FILTERS:
-length of book
-genre/subject?
-vibes of book
-"""
+
+#PLANNED FILTERS:
+#length of book
+#genre/subject?
+#vibes of book
+
 author = ""
 try:
     key = st.secrets["key"]
