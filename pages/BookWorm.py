@@ -76,8 +76,10 @@ if st.button("Give Me a Book!"):
     fullContent = f"""
     You are a librarian managing a catalogue of books: {bList}. 
     From this list of books titles, I want a book that is around {start} to {end} pages long, and satisfies the following
-    tags: {content}. After choosing the right book for me, start your response with "I reccommend this book: **(book title)**". Then give paragraph summary 
-    of the book and then give me reasons as to why I should read this book.
+    tags: {content}. After choosing the right book for me, start your response with "I reccommend this book: **(book title)** by (Author Name)". 
+    Then give a paragraph summary of the book and 
+    then give me reasons as to why I should read this book.
+    Then give me those same reasons sortened to short sentences and neatly put into bullet points.
     """
 
     
