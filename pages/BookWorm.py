@@ -40,9 +40,9 @@ content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, T
 st.write("What Year do You Want Your Book to be Published In?")
 start, end = st.columns(2)
 with start:
-    timelineStart = st.number_input("")
+    timelineStart = st.number_input("Starting Publishing Year")
 with end:
-    timelineEnd = st.number_input("")
+    timelineEnd = st.number_input("Ending Publishing Year")
 
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
