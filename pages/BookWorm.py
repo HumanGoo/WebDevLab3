@@ -35,7 +35,8 @@ if st.checkbox("Looking for a Specific Author"):
     author = st.text_input("Author")
 
 
-content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Romance, etc.", placeholder= "Seperate subjects commas")
+content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Romance, etc.", 
+                        placeholder= "Tags")
 
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
