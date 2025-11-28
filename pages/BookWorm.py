@@ -6,7 +6,7 @@ from datetime import date
 currentDate = date.today()
 currentYear = currentDate.year
 aList = []
-for i in range(1200,currentYear+1,5):
+for i in range(0,1000+1,5):
     aList.append(i)
 
 import os
@@ -41,23 +41,25 @@ if st.checkbox("Looking for a Specific Author"):
 
 content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Happy, Educational, Mars etc.", 
                         placeholder= "Tags")
-startTime, endTime = st.select_slider(
-    "Select a range of your desired book's publish year",
+start, end = st.select_slider(
+    "Select a range of your desired book's page length",
     options=aList,
-    value=(1900, 2025),
+    value=(0, 2025),
 )
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
 
 if st.button("Give Me a Book!"):
     query = content.strip().replace(" ","").lower()
+    query += f"+number_of_pages%3A%5B{start}+TO+{end}%5D"
     if author:
         query+= f"+author3A{author}"
     data = r.get(baseURL+query+"&mode=everything&sort=readinglog")
     aDict = data.json()
     st.write(baseURL+query+"&mode=everything&sort=readinglog")
+    bList = []
     for i in range(0,11):
-        st.write(aDict["docs"][i]["title"])
+        bList.append(aDict["docs"][i]["title"])
     
     """
     response = model.generate_content(content)
