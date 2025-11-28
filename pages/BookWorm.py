@@ -65,7 +65,7 @@ if st.button("Give Me a Book!"):
             bList.append(aDict["docs"][i]["title"])
     except:
         for i in aDict["docs"]:
-            bList.append([i]["title"])
+            bList.append(aDict["docs"][i]["title"])
     st.write(bList)
     
     """
