@@ -26,7 +26,7 @@ if content:
     response = model.generate_content(content)
     text = response.text
 try:
-    st.write_stream(text) #dont forget to print your response!
+    st.write(text) #dont forget to print your response!
 
 except:
     pass
