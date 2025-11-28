@@ -30,7 +30,7 @@ def books(title):
             author = book["author_name"][0]
         else:
             author = "Unknown Author"
-        bookList += "- " + name + " by " + author + "\n"
+        bookList += name + " by " + author + "\n"
 
     if bookList == "":
         return "No books found."
