@@ -6,6 +6,8 @@ import requests
 
 st.title("BookBot")
 
+st.text("This is BookBot, your **reading assistant**! Enter any book title to get a summary, reasons to read it, and recommendations for similar books.")
+
 key = st.secrets["key"]
 genai.configure(api_key=key)
 model = genai.GenerativeModel("models/gemini-2.5-flash")
@@ -60,7 +62,7 @@ if userText:
 
         prompt = (
             "You are BookBot. The user will enter a book title. "
-            "Summarize each book in 3–5 sentences, explain why someone should read it, and recommend similar books.\n\n"
+            "Summarize each book in 2-4 sentences, explain why someone should read it in 2 sentences, and recommend similar books.\n\n"
             "Conversation:\n" + memory +
             "\nBooks Found:\n" + apiRec +
             "\nUser Entered:\n" + userText
