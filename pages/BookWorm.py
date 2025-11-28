@@ -30,7 +30,7 @@ content = st.text_input("What Kind of Book Are You Looking For?")
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
 
 
-if content:
+if st.button("Give Me a Book!"):
     response = model.generate_content(content)
     text = response.text
 
@@ -40,7 +40,6 @@ try:
             yield word + " "
             time.sleep(0.02)
     st.write_stream(stream_data) #dont forget to print your response!
-
 except:
     pass
 
