@@ -40,6 +40,8 @@ except:
 #length = st.slider("Desired Book Length",min_value=10, max_value=1000)
 if st.checkbox("Looking for a Specific Author"):
     author = st.text_input(label="",placeholder="Author")
+else:
+    author = ""
 
 
 content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Happy, Educational, Mars etc.", 
@@ -63,7 +65,7 @@ if st.button("Give Me a Book!"):
     bList = []
     try:
         aDict["docs"][i]["title"]
-        for i in range(0,11):
+        for i in range(0,101):
             bList.append(aDict["docs"][i]["title"])
     except:
         for i in aDict["docs"]:
@@ -71,10 +73,17 @@ if st.button("Give Me a Book!"):
             bList.append(i["title"])
     #st.write(bList)
     
+    fullContent = f"""
+    You are a librarian managing a catalogue of books: {bList}. 
+    From this list of books titles, I want a book that is around {start} to {end} pages long, and satisfies the following
+    tags: {content}. After choosing the right book for me, start your response with "I reccommend this book". Then give paragraph summary 
+    of the book and then give me reasons as to why I should read this book.
     """
-    response = model.generate_content(content)
+
+    
+    response = model.generate_content(fullContent)
     text = response.text
-    """
+    
 
 try:
     def stream_data():
