@@ -51,8 +51,6 @@ model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model
 
 if st.button("Give Me a Book!"):
     query = content.strip().replace(" ","").lower()
-    publishYear = f"+first_publish_year:[%3A%5B{startTime}+TO+{endTime}]%5D"
-    query += publishYear
     if author:
         query+= f"+author3A{author}"
     data = r.get(baseURL+query+"&mode=everything")
