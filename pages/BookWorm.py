@@ -85,7 +85,7 @@ if st.button("Give Me a Book!"):
     
     response = model.generate_content(fullContent)
     text = response.text
-    
+    st.write(text.index("\n"))
 
 try:
     def stream_data():
