@@ -61,16 +61,15 @@ if userText:
         apiRec = books(userText)
 
         prompt = (
-            "You are BookBot. The user will enter a book title. "
-            "If the user says hello, greet them and remind them that your job is to summarize books. "
-            "If the user says anything other than hello or a book title, politely remind them that your job is to summarize books. "
-            "For each book found, summarize it in 2–4 sentences, "
-            "and recommend similar books.\n\n"
-            "Conversation:\n" + memory +
-            "\nBooks Found:\n" + apiRec +
-            "\nUser Entered:\n" + userText
-        )
-
+        "You are BookBot. What you do depends on what the user says:\n"
+        "- If the user greets you, greet them and explain you help with book summaries and questions about books.\n"
+        "- If the user enters a book title, summarize the book in 1–3 sentences and describe its themes, genre, difficulty, characters, and tone.\n"
+        "- If the user asks a question about a book, answer clearly without spoilers.\n"
+        "- If the user says anything unrelated to books, politely remind them that you only help with book-related questions.\n\n"
+        "Conversation so far:\n" + memory +
+        "\nBooks Found:\n" + apiRec +
+        "\nUser Entered:\n" + userText
+    )
         try:
             reply = model.generate_content(prompt).text
         except:
