@@ -6,7 +6,8 @@ from datetime import date
 currentDate = date.today()
 currentYear = currentDate.year
 aList = []
-for i in range(0,1000+1,5):
+aNum = 1000
+for i in range(0,aNum+1,10):
     aList.append(i)
 
 import os
@@ -44,7 +45,7 @@ content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, T
 start, end = st.select_slider(
     "Select a range of your desired book's page length",
     options=aList,
-    value=(0, 2025),
+    value=(0, aNum),
 )
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
