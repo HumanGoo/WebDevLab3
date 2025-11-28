@@ -57,7 +57,7 @@ if st.button("Give Me a Book!"):
     aDict = data.json()
     st.write(baseURL+query+"&mode=everything")
     for i in range(0,11):
-        st.write(aDict["docs"][i])
+        st.write(aDict["docs"][i]["title"])
     
     """
     response = model.generate_content(content)
