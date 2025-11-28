@@ -10,7 +10,7 @@ import os
 
 st.title("BookWorm")
 
-baseURL  = "https://openlibrary.org/search.json?q="
+baseURL  = "https://openlibrary.org/search.json?q=subject%3A"
 
 st.write("Welcome to BookWorm! Find the right book for you.")
 
@@ -35,12 +35,20 @@ if st.checkbox("Looking for a Specific Author"):
     author = st.text_input("Author")
 
 
-content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Romance, etc.", 
+content = st.text_input("What Kind of a Book Are You Looking For? i.e Fiction, Thriller, Happy, Educational, Mars etc.", 
                         placeholder= "Tags")
+st.write("What Year do You Want Your Book to be Published In?")
+start, end = st.columns()
+with start:
+    timelineStart = st.number_input("")
+with end:
+    timelineEnd = st.number_input("")
 
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
 if st.button("Give Me a Book!"):
+    query = ""
+    response = r.get(baseURL+"&mode=everything")
     response = model.generate_content(content)
     text = response.text
 
