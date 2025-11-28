@@ -43,7 +43,7 @@ start, end = st.columns(2)
 with start:
     timelineStart = st.number_input("Starting Publishing Year", min_value=1200 , max_value= currentYear,step=10,value=1900)
 with end:
-    timelineEnd = st.number_input("Ending Publishing Year", max_value=1300, max_value = currentYear, step=10, value= currentYear)
+    timelineEnd = st.number_input("Ending Publishing Year", min_value=1300, max_value = currentYear, step=10, value= currentYear)
 
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
