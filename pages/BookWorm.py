@@ -61,7 +61,7 @@ if st.button("Give Me a Book!"):
         query+= f"+author:{author}"
     data = r.get(baseURL+query+"&mode=everything&sort=readinglog")
     aDict = data.json()
-    st.write(baseURL+query+"&mode=everything&sort=readinglog")
+    #st.write(baseURL+query+"&mode=everything&sort=readinglog")
     bList = []
     try:
         aDict["docs"][i]["title"]
