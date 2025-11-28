@@ -48,6 +48,7 @@ startTime, endTime = st.select_slider(
 )
 
 model = genai.GenerativeModel('models/gemini-2.5-flash') #this is the free model of google gemini
+
 if st.button("Give Me a Book!"):
     query = content.strip().replace(" ","").lower()
     publishYear = f"+first_publish_year:[%3A%5B{startTime}+TO+{endTime}]%5D"
@@ -56,7 +57,9 @@ if st.button("Give Me a Book!"):
         query+= f"+author3A{author}"
     data = r.get(baseURL+query+"&mode=everything")
     aDict = data.json()
+    st.write(baseURL+query+"&mode=everything")
     st.write(aDict)
+    
     """
     response = model.generate_content(content)
     text = response.text
