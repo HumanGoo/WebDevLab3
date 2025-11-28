@@ -54,7 +54,7 @@ if st.button("Give Me a Book!"):
     query = content.strip().replace(" ","").lower()
     query += f"+number_of_pages%3A%5B{start}+TO+{end}%5D"
     if author:
-        query+= f"+author3A{author}"
+        query+= f"+author:{author}"
     data = r.get(baseURL+query+"&mode=everything&sort=readinglog")
     aDict = data.json()
     st.write(baseURL+query+"&mode=everything&sort=readinglog")
