@@ -2,7 +2,7 @@ import streamlit as st
 from google import generativeai as genai
 import requests
 
-#code for chat-GPT like bot: BookBot
+#code for AI bot BookBot
 
 st.title("BookBot")
 
