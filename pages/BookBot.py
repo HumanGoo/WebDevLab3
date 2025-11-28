@@ -6,7 +6,7 @@ import requests
 
 st.title("BookBot")
 
-st.text("Wondering about a book? BookBot can summarize it, explain its themes, and answer your questions.")
+st.text("Wondering about a book? BookBot has all your answers!")
 
 key = st.secrets["key"]
 genai.configure(api_key=key)
