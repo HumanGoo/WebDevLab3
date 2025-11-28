@@ -6,7 +6,7 @@ import requests
 
 st.title("BookBot")
 
-st.text("This is BookBot, your reading assistant! Enter a book title to get a summary, reasons to read it, and recommendations for similar books.")
+st.text("Wondering if a book is worth the read? This is BookBot, your reading assistant! Enter a book title to get a summary and recommendations for similar books.")
 
 key = st.secrets["key"]
 genai.configure(api_key=key)
@@ -64,7 +64,7 @@ if userText:
             "You are BookBot. The user will enter a book title. "
             "If the user says hello, greet them and remind them that your job is to summarize books. "
             "If the user says anything other than hello or a book title, politely remind them that your job is to summarize books. "
-            "For each book found, summarize it in 2–4 sentences, explain why someone should read it in 2 sentences, "
+            "For each book found, summarize it in 2–4 sentences, "
             "and recommend similar books.\n\n"
             "Conversation:\n" + memory +
             "\nBooks Found:\n" + apiRec +
