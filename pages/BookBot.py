@@ -4,7 +4,7 @@ import requests
 import time
 
 with st.sidebar:
-    st.sidebar.page_link("pages/Home_Page.py", label="Home Page")
+    st.sidebar.page_link("Home_Page.py", label="Home Page")
 
 
 #code for AI bot BookBot
