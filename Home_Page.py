@@ -5,7 +5,7 @@ with st.sidebar:
     st.sidebar.page_link("pages/Library.py", label="📚Library📖")
     st.sidebar.page_link("pages/CompareRatings.py", label="📊Book Comparisons📈")
     st.sidebar.page_link("pages/BookWorm.py", label="📚BookWorm Recommendations🐛")
-    st.sidebar.page_link("pages/BookBot.py", label="🤖BookBot🤖")
+    st.sidebar.page_link("pages/BookBot.py", label="🤖BookBot™")
 
 # Title of App
 st.title("Web Development Lab03")
