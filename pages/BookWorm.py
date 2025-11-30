@@ -9,7 +9,7 @@ with st.sidebar:
     st.sidebar.page_link("pages/Library.py", label="📚Library📖")
     st.sidebar.page_link("pages/CompareRatings.py", label="📊Book Comparisons📈")
     st.sidebar.page_link("pages/BookWorm.py", label="📚BookWorm Recommendations🐛")
-    st.sidebar.page_link("pages/BookBot", label="🤖BookBot🤖")
+    st.sidebar.page_link("pages/BookBot.py", label="🤖BookBot🤖")
 
 currentDate = date.today()
 currentYear = currentDate.year
