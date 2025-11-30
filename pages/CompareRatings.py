@@ -57,7 +57,7 @@ if chooseTitles:
                 st.session_state.ratingsStored.append({"Book": title, "Age": ageNum or 0})
 
 if st.session_state.ratingsStored:
-    df = pd.DataFrame(st.session_state.ratingsStored)
-    df = df.set_index("Book")
-    st.subheader(f"{rateOrPage} Bar Graph")
-    st.bar_chart(df)
+        df = pd.DataFrame(st.session_state.ratingsStored)
+        df = df.set_index("Book")
+        st.subheader(f"{rateOrPage} Bar Graph")
+        st.bar_chart(df)
