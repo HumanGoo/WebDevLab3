@@ -65,7 +65,8 @@ if chooseTitles:
 
 if st.session_state.ratingsStored:
     with st.container():
-        df = pd.DataFrame(st.session_state.ratingsStored)
-        df = df.set_index("Book")
-        st.subheader(f"{rateOrPage} Bar Graph")
-        st.bar_chart(df)
+        st.markdown()
+            df = pd.DataFrame(st.session_state.ratingsStored)
+            df = df.set_index("Book")
+            st.subheader(f"{rateOrPage} Bar Graph")
+            st.bar_chart(df)
