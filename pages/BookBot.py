@@ -78,10 +78,7 @@ if userText:
         except:
             reply = "Error."
     
-        def stream_data():
-            for word in reply.split(" "):
-                yield word + " "
-            time.sleep(0.02)
-        placeholder.markdown(stream_data)
+
+        placeholder.markdown(reply)
 
     st.session_state.messages.append({"speaker": "chatbot", "content": reply})
