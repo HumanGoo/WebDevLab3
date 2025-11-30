@@ -81,6 +81,7 @@ if userText:
         except:
             reply = "Error."
 
-        placeholder.markdown(st.write_stream(stream_data))
+        placeholder.markdown()
+        st.write_stream(stream_data)
 
     st.session_state.messages.append({"speaker": "chatbot", "content": reply})
