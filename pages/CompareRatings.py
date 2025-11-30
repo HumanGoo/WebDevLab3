@@ -3,6 +3,13 @@ import requests as r
 import pandas as pd
 from datetime import datetime
 
+with st.sidebar:
+    st.sidebar.page_link("Home_Page.py", label="🏠Home Page🏠")
+    st.sidebar.page_link("pages/Library.py", label="📚Library📖")
+    st.sidebar.page_link("pages/CompareRatings.py", label="📊Book Comparisons📈")
+    st.sidebar.page_link("pages/BookWorm.py", label="📚BookWorm Book Recommendations🐛")
+    st.sidebar.page_link("pages/BookBot", label="🤖BookBot🤖")
+
 current_year = datetime.now().year
 st.title("Compare Ratings and Number of Pages for Books")
 st.write("Looking for your next read? Compare **book ratings** and **page numbers** between books in the same genre.")
