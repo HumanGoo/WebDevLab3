@@ -3,7 +3,8 @@ from google import generativeai as genai
 import requests
 import time
 
-st.sidebar.page_link("pages/Home_Page.py", label="Home Page")
+with st.sidebar:
+    st.sidebar.page_link("pages/Home_Page.py", label="Home Page")
 
 
 #code for AI bot BookBot
