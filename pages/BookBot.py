@@ -1,6 +1,7 @@
 import streamlit as st
 from google import generativeai as genai
 import requests
+import time
 
 #code for AI bot BookBot
 
@@ -71,7 +72,12 @@ if userText:
         "\nUser Entered:\n" + userText
     )
         try:
+
             reply = model.generate_content(prompt).text
+            def stream_data():
+                for word in reply.split(" "):
+                    yield word + " "
+                time.sleep(0.02)
         except:
             reply = "Error."
 
