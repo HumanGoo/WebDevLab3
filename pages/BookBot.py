@@ -74,14 +74,14 @@ if userText:
         try:
 
             reply = model.generate_content(prompt).text
-            def stream_data():
-                for word in reply.split(" "):
-                    yield word + " "
-                time.sleep(0.02)
+
         except:
             reply = "Error."
-
-        placeholder.markdown()
-        st.write_stream(stream_data)
+    
+        def stream_data():
+            for word in reply.split(" "):
+                yield word + " "
+            time.sleep(0.02)
+        placeholder.markdown(stream_data)
 
     st.session_state.messages.append({"speaker": "chatbot", "content": reply})
