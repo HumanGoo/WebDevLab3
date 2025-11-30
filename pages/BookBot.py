@@ -5,10 +5,11 @@ import time
 
 with st.sidebar:
     st.sidebar.page_link("Home_Page.py", label="🏠Home Page🏠")
-    st.sidebar.page_link("pages/Library.py", label="📚Library📖")
-    st.sidebar.page_link("pages/CompareRatings.py", label="📊Book Comparisons📈")
-    st.sidebar.page_link("pages/BookWorm.py", label="📚BookWorm Book Recommendations🐛")
-    st.sidebar.page_link("pages/BookBot", label="🤖BookBot🤖")
+    st.sidebar.page_link("pages\Library.py", label="📚Library📖")
+    st.sidebar.page_link("pages\CompareRatings.py", label="📊Book Comparisons📈")
+    st.sidebar.page_link("pages\BookWorm.py", label="📚BookWorm Recommendations🐛")
+    st.sidebar.page_link("pages\BookBot", label="🤖BookBot🤖")
+
 
 
 
